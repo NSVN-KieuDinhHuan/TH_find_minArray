@@ -1,9 +1,29 @@
 package com.company;
 
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
-        int[] arr = {4, 12, 7, 8, 1, 6, 9};
+        Scanner input=new Scanner(System.in);
+
+        System.out.println("nhập kích thước của mảng 1 chiều");
+        int size=input.nextInt();
+        do {
+            if (size>20){
+                System.out.println("fill size again");
+            }
+        }while (size>20);
+        int[] arr = new int[size];
+        for (int i=0;i<size;i++){
+            System.out.println("Nhập giá trị của mảng ở vị trí "+i);
+            arr[i]=input.nextInt();
+        }
+        System.out.print("array={");
+        for (int i=0;i<size;i++){
+            System.out.print(arr[i]+",");
+        }
+        System.out.print("}");
         int index = minValue(arr);
         System.out.println("The smallest element in the array is: " + arr[index]);
 
